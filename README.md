@@ -7,7 +7,7 @@
     <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
     <img src="https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E" alt="Vite" />
     <a href="https://github.com/Mahizhan-S/Supercode/stargazers"><img src="https://img.shields.io/github/stars/Mahizhan-S/Supercode?style=for-the-badge&color=yellow" alt="Stars" /></a>
-    <img src="https://img.shields.io/github/license/Mahizhan-S/Supercode?style=for-the-badge" alt="License" />
+    <img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" alt="License" />
   </p>
 </div>
 
