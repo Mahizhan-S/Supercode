@@ -1,18 +1,19 @@
 import React from 'react';
 
-export function Progress({ value = 0, className = '', color = 'violet' }) {
-  const colors = {
-    violet: 'from-violet-500 to-indigo-500',
-    emerald: 'from-emerald-500 to-teal-500',
-    amber: 'from-amber-500 to-orange-500',
-    rose: 'from-rose-500 to-pink-500',
-    cyan: 'from-cyan-500 to-blue-500',
-  };
+const colorMap = {
+  emerald: { bar: 'bg-[#68f5b8]', track: 'bg-[#68f5b8]/10' },
+  amber: { bar: 'bg-[#fbbf24]', track: 'bg-[#fbbf24]/10' },
+  rose: { bar: 'bg-[#ffb4ab]', track: 'bg-[#ffb4ab]/10' },
+  violet: { bar: 'bg-[#d0bcff]', track: 'bg-[#d0bcff]/10' },
+  cyan: { bar: 'bg-[#2fd9f4]', track: 'bg-[#2fd9f4]/10' },
+};
 
+export function Progress({ value = 0, color = 'cyan', className = '' }) {
+  const c = colorMap[color] || colorMap.cyan;
   return (
-    <div className={`w-full h-2 bg-slate-800/80 rounded-full overflow-hidden ${className}`}>
+    <div className={`w-full h-1.5 rounded-full overflow-hidden ${c.track} ${className}`}>
       <div
-        className={`h-full rounded-full bg-gradient-to-r ${colors[color] || colors.violet} transition-all duration-700 ease-out`}
+        className={`h-full rounded-full ${c.bar} transition-all duration-500 ease-out`}
         style={{ width: `${Math.min(100, Math.max(0, value))}%` }}
       />
     </div>

@@ -1,17 +1,21 @@
 import React from 'react';
 
-export function Card({ className = '', ...props }) {
-  return <div className={`glass-card ${className}`} {...props} />;
+export function Card({ className = '', children, ...props }) {
+  return (
+    <div className={`glass-card p-0 ${className}`} {...props}>
+      {children}
+    </div>
+  );
 }
 
-export function CardHeader({ className = '', ...props }) {
-  return <div className={`p-6 ${className}`} {...props} />;
+export function CardHeader({ className = '', children }) {
+  return <div className={`px-5 pt-5 pb-0 ${className}`}>{children}</div>;
 }
 
-export function CardTitle({ className = '', ...props }) {
-  return <h3 className={`font-semibold text-slate-100 ${className}`} {...props} />;
+export function CardTitle({ className = '', children }) {
+  return <h3 className={`text-sm font-semibold text-[#e4e1eb] tracking-tight ${className}`}>{children}</h3>;
 }
 
-export function CardContent({ className = '', ...props }) {
-  return <div className={`px-6 pb-6 ${className}`} {...props} />;
+export function CardContent({ className = '', children }) {
+  return <div className={`px-5 py-4 ${className}`}>{children}</div>;
 }

@@ -3,7 +3,7 @@ import React from 'react';
 export function Textarea({ className = '', ...props }) {
   return (
     <textarea
-      className={`flex min-h-[100px] w-full rounded-xl border border-slate-700/60 bg-slate-800/50 px-4 py-3 text-sm text-slate-100 placeholder:text-slate-500 transition-colors duration-200 hover:border-slate-600 focus:border-violet-500/50 focus:bg-slate-800/80 focus:outline-none resize-none ${className}`}
+      className={`w-full rounded-lg border border-[#3c494c]/40 bg-[#0e0e14] px-3 py-2.5 text-sm text-[#e4e1eb] placeholder:text-[#859397]/50 focus:border-[#2fd9f4]/60 focus:shadow-[0_0_12px_rgba(47,217,244,0.08)] transition-all duration-200 resize-none font-['Geist'] ${className}`}
       {...props}
     />
   );

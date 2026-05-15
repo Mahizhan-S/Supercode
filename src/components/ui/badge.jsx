@@ -1,23 +1,21 @@
 import React from 'react';
 
-export function Badge({ className = '', variant = 'default', ...props }) {
-  const variants = {
-    default: 'bg-violet-500/15 text-violet-300 border border-violet-500/20',
-    secondary: 'bg-slate-700/40 text-slate-300 border border-slate-600/30',
-    outline: 'border border-slate-600 text-slate-300',
-    easy: 'bg-emerald-500/15 text-emerald-400 border border-emerald-500/20',
-    medium: 'bg-amber-500/15 text-amber-400 border border-amber-500/20',
-    hard: 'bg-rose-500/15 text-rose-400 border border-rose-500/20',
-    solved: 'bg-emerald-500/15 text-emerald-400 border border-emerald-500/20',
-    attempted: 'bg-amber-500/15 text-amber-400 border border-amber-500/20',
-    todo: 'bg-slate-500/15 text-slate-400 border border-slate-500/20',
-    revisit: 'bg-violet-500/15 text-violet-400 border border-violet-500/20',
-  };
+const variantStyles = {
+  easy: "bg-[#68f5b8]/10 text-[#68f5b8] border border-[#68f5b8]/20",
+  medium: "bg-[#fbbf24]/10 text-[#fbbf24] border border-[#fbbf24]/20",
+  hard: "bg-[#ffb4ab]/10 text-[#ffb4ab] border border-[#ffb4ab]/20",
+  solved: "bg-[#4edea3]/10 text-[#4edea3] border border-[#4edea3]/20",
+  attempted: "bg-[#2fd9f4]/10 text-[#2fd9f4] border border-[#2fd9f4]/20",
+  todo: "bg-[#3c494c]/30 text-[#bbc9cd] border border-[#3c494c]/30",
+  revisit: "bg-[#d0bcff]/10 text-[#d0bcff] border border-[#d0bcff]/20",
+  secondary: "bg-[#2a2930] text-[#bbc9cd] border border-[#3c494c]/20",
+  default: "bg-[#2a2930] text-[#bbc9cd] border border-[#3c494c]/20",
+};
 
+export function Badge({ variant = 'default', className = '', children }) {
   return (
-    <span
-      className={`inline-flex items-center rounded-lg px-2.5 py-1 text-xs font-medium ${variants[variant] || variants.default} ${className}`}
-      {...props}
-    />
+    <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-medium font-['JetBrains_Mono'] tracking-wider uppercase whitespace-nowrap ${variantStyles[variant] || variantStyles.default} ${className}`}>
+      {children}
+    </span>
   );
 }
