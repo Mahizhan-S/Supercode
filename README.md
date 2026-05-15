@@ -22,9 +22,9 @@
 
 ## 📸 Sneak Peek
 
-> *Add a screenshot or GIF of your application here to show off the beautiful UI!*
-> 
-> `![App Screenshot](./public/screenshot.png)`
+Here's an overview of the beautiful UI of the Supercode tracker!
+
+![App Screenshot](./public/screenshot.png)
 
 ## 💻 Tech Stack
 
