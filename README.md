@@ -24,7 +24,8 @@
 
 Here's an overview of the beautiful UI of the Supercode tracker!
 
-![App Screenshot](./public/screenshot.png)
+![Dashboard View](./public/screenshot1.png)
+![Roadmap View](./public/screenshot2.png)
 
 ## 💻 Tech Stack
 
