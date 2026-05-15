@@ -17,14 +17,28 @@ A continuous progress tracker for LeetCode. This React-based application is desi
 
 ## Interface Overview
 
-![Dashboard View](./public/screenshot1.png)
-![Roadmap View](./public/screenshot2.png)
+### Dashboard
+![Dashboard](./screenshots/dashboard.png)
+
+### Skill Roadmap
+![Roadmap](./screenshots/roadmap.png)
+
+### Problems
+![Problems](./screenshots/problems.png)
+
+### Analytics
+![Analytics](./screenshots/analytics.png)
+
+### Revision Queue
+![Revision](./screenshots/revision.png)
 
 ## Tech Stack
 
-- **Framework**: React, Vite
-- **Styling**: Component-scoped CSS
-- **Deployment**: Standard Node/NPM toolchain
+- **Framework**: React 18, Vite 5
+- **Styling**: Tailwind CSS (CDN) + Deep Space Pro design system
+- **Typography**: Geist + JetBrains Mono
+- **Charts**: Recharts
+- **Icons**: Lucide React + Material Symbols
 
 ## Getting Started
 
