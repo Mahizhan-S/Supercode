@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=JetBrains+Mono:wght@100..800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      line-height: 1;
+      text-transform: none;
+      letter-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      direction: ltr;
+    }
+    body {
+      background-color: #131319;
+      color: #e4e1eb;
+      font-family: 'Geist', sans-serif;
+    }
+    .glass-card {
+      background: rgba(14, 14, 20, 0.15);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(60, 73, 76, 0.2);
+    }
+    .neon-glow-cyan {
+      box-shadow: 0 0 40px rgba(47, 217, 244, 0.06);
+    }
+  </style>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary-fixed-dim": "#2fd9f4",
+            "on-secondary": "#3c0091",
+            "tertiary-fixed-dim": "#4edea3",
+            "on-tertiary-container": "#005a3d",
+            "on-tertiary-fixed": "#002113",
+            "on-primary-fixed-variant": "#004e5a",
+            "outline": "#859397",
+            "primary-container": "#22d3ee",
+            "on-surface": "#e4e1eb",
+            "inverse-surface": "#e4e1eb",
+            "error-container": "#93000a",
+            "surface-container-lowest": "#0e0e14",
+            "secondary-container": "#571bc1",
+            "secondary-fixed-dim": "#d0bcff",
+            "surface-tint": "#2fd9f4",
+            "secondary-fixed": "#e9ddff",
+            "inverse-primary": "#006877",
+            "on-primary-fixed": "#001f25",
+            "inverse-on-surface": "#303037",
+            "primary": "#8aebff",
+            "on-secondary-fixed": "#23005c",
+            "on-secondary-fixed-variant": "#5516be",
+            "on-primary-container": "#005763",
+            "on-surface-variant": "#bbc9cd",
+            "tertiary": "#68f5b8",
+            "on-tertiary": "#003824",
+            "surface-dim": "#131319",
+            "on-primary": "#00363e",
+            "background": "#131319",
+            "on-error": "#690005",
+            "surface-container-low": "#1b1b22",
+            "surface": "#131319",
+            "on-secondary-container": "#c4abff",
+            "surface-container-high": "#2a2930",
+            "on-tertiary-fixed-variant": "#005236",
+            "surface-container-highest": "#35343b",
+            "tertiary-container": "#46d89d",
+            "primary-fixed": "#a2eeff",
+            "on-error-container": "#ffdad6",
+            "surface-container": "#1f1f26",
+            "tertiary-fixed": "#6ffbbe",
+            "secondary": "#d0bcff",
+            "outline-variant": "#3c494c",
+            "surface-bright": "#393840",
+            "surface-variant": "#35343b",
+            "error": "#ffb4ab",
+            "on-background": "#e4e1eb"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter": "16px",
+            "container-max": "1280px",
+            "lg": "24px",
+            "sm": "8px",
+            "xl": "32px",
+            "unit": "4px",
+            "xs": "4px",
+            "md": "16px"
+          },
+          "fontFamily": {
+            "headline-lg": ["Geist"],
+            "body-sm": ["Geist"],
+            "label-mono": ["JetBrains Mono"],
+            "headline-lg-mobile": ["Geist"],
+            "display-lg": ["Geist"],
+            "body-base": ["Geist"],
+            "headline-md": ["Geist"],
+            "label-mono-sm": ["JetBrains Mono"]
+          },
+          "fontSize": {
+            "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "body-sm": ["12px", {"lineHeight": "18px", "letterSpacing": "0", "fontWeight": "400"}],
+            "label-mono": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+            "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+            "body-base": ["14px", {"lineHeight": "22px", "letterSpacing": "0", "fontWeight": "400"}],
+            "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "label-mono-sm": ["10px", {"lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "500"}]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background text-on-surface">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-lg h-16 bg-surface/80 backdrop-blur-md border-b border-outline-variant/10">
+<div class="flex items-center gap-md">
+<span class="font-headline-md text-headline-md font-bold text-primary tracking-tighter">Supercode</span>
+<nav class="hidden md:flex gap-lg ml-xl">
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary-fixed-dim transition-colors" href="#">Dashboard</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary-fixed-dim transition-colors" href="#">Projects</a>
+<a class="font-label-mono text-label-mono text-primary border-b-2 border-primary pb-1 transition-colors" href="#">Settings</a>
+</nav>
+</div>
+<div class="flex items-center gap-md">
+<div class="hidden md:flex items-center bg-surface-container-high px-sm py-xs rounded border border-outline-variant/20">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-label-mono text-on-surface px-sm w-48" placeholder="Search config..." type="text"/>
+<span class="text-on-surface-variant/40 text-[10px] font-label-mono border border-outline-variant/30 px-1 rounded">⌘K</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-colors">notifications</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-colors">settings</span>
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center overflow-hidden border border-primary/20">
+<img alt="Developer Profile" class="w-full h-full object-cover" data-alt="A close-up high-resolution profile avatar of a software developer represented as a sleek, minimalist geometric icon. The design uses a monochromatic palette of deep charcoals and bright cyan accents to reflect a high-performance technical environment. Soft studio lighting creates subtle depth and a professional, modern aesthetic consistent with a premium developer tool." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1kj11GFxulz4UG90pXxxYo77m0wmgir8hQoeg2q4GIi7bAfF3My91EO22zxuk7s52JhWjKLGJOvyBbnJJc4CZrCgNYRAQtIgbdvwj_Q8myGkWLPcCyFkm6qurDhQSLDwLWTaChkdRAFKPQbFfZ7ftdnozfPHSO-lOsYdEMbvjDM1AYCeIKGeP8bd3rTOGcMj4q6Wqf7DqtO3AO9534GieL1quqofwr3TJCBXQEwLT0qU6IxBEDA902GHYhPQ1fE3oD6qD-BbSe8Y"/>
+</div>
+</div>
+</header>
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full flex flex-col items-center py-xl z-40 bg-surface-container-lowest/15 backdrop-blur-xl border-r border-outline-variant/8 w-20 pt-20">
+<div class="flex flex-col gap-xl items-center">
+<div class="group relative flex flex-col items-center gap-xs cursor-pointer">
+<div class="p-sm rounded-xl transition-all duration-300 ease-in-out text-on-surface-variant/60 hover:bg-surface-container-high hover:text-on-surface">
+<span class="material-symbols-outlined">grid_view</span>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm opacity-0 group-hover:opacity-100 transition-opacity">DASH</span>
+</div>
+<div class="group relative flex flex-col items-center gap-xs cursor-pointer">
+<div class="p-sm rounded-xl transition-all duration-300 ease-in-out text-on-surface-variant/60 hover:bg-surface-container-high hover:text-on-surface">
+<span class="material-symbols-outlined">terminal</span>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm opacity-0 group-hover:opacity-100 transition-opacity">PROJ</span>
+</div>
+<div class="group relative flex flex-col items-center gap-xs cursor-pointer">
+<div class="p-sm rounded-xl transition-all duration-300 ease-in-out text-on-surface-variant/60 hover:bg-surface-container-high hover:text-on-surface">
+<span class="material-symbols-outlined">rocket_launch</span>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm opacity-0 group-hover:opacity-100 transition-opacity">DEPL</span>
+</div>
+<div class="group relative flex flex-col items-center gap-xs cursor-pointer">
+<div class="p-sm rounded-xl transition-all duration-300 ease-in-out text-on-surface-variant/60 hover:bg-surface-container-high hover:text-on-surface">
+<span class="material-symbols-outlined">monitoring</span>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm opacity-0 group-hover:opacity-100 transition-opacity">ANAL</span>
+</div>
+<div class="group relative flex flex-col items-center gap-xs cursor-pointer">
+<div class="p-sm rounded-xl transition-all duration-300 ease-in-out bg-primary-container/20 text-primary-fixed-dim border-r-2 border-primary-fixed-dim">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">group</span>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm text-primary-fixed-dim">TEAM</span>
+</div>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="ml-20 pt-24 pb-12 px-xl max-w-[1400px] mx-auto min-h-screen">
+<div class="mb-xl">
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-xs">Infrastructure Configuration</h1>
+<p class="font-body-base text-on-surface-variant max-w-2xl">Manage environment variables, secure secrets, and control team permissions for the production cluster.</p>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-lg items-start">
+<!-- System Health Widget (3 columns) -->
+<section class="col-span-12 lg:col-span-4 flex flex-col gap-lg">
+<div class="glass-card neon-glow-cyan p-lg rounded-xl flex flex-col gap-md">
+<div class="flex justify-between items-center">
+<h3 class="font-label-mono text-label-mono text-primary uppercase tracking-widest">System Health</h3>
+<span class="flex items-center gap-xs text-tertiary-fixed-dim font-label-mono-sm">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+              LIVE
+            </span>
+</div>
+<div class="flex flex-col gap-sm">
+<div class="flex justify-between font-label-mono-sm text-on-surface-variant">
+<span>CPU USAGE</span>
+<span class="text-primary-fixed-dim">34.2%</span>
+</div>
+<div class="w-full h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary-fixed-dim" style="width: 34.2%"></div>
+</div>
+</div>
+<div class="flex flex-col gap-sm">
+<div class="flex justify-between font-label-mono-sm text-on-surface-variant">
+<span>MEMORY</span>
+<span class="text-primary-fixed-dim">1.2GB / 4GB</span>
+</div>
+<div class="w-full h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary-fixed-dim" style="width: 30%"></div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-md pt-sm border-t border-outline-variant/10">
+<div class="flex flex-col">
+<span class="font-label-mono-sm text-on-surface-variant opacity-60">REPLICAS</span>
+<span class="font-label-mono text-on-surface">12 Active</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-mono-sm text-on-surface-variant opacity-60">LATENCY</span>
+<span class="font-label-mono text-on-surface">24ms</span>
+</div>
+</div>
+</div>
+<div class="glass-card p-lg rounded-xl flex flex-col gap-md">
+<h3 class="font-label-mono text-label-mono text-on-surface-variant uppercase tracking-widest">Quick Actions</h3>
+<div class="flex flex-col gap-sm">
+<button class="flex items-center justify-between px-md py-sm bg-surface-container-high rounded border border-outline-variant/10 hover:border-primary/40 transition-all group">
+<span class="font-label-mono text-label-mono text-on-surface">Restart Microservices</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant group-hover:text-primary">refresh</span>
+</button>
+<button class="flex items-center justify-between px-md py-sm bg-surface-container-high rounded border border-outline-variant/10 hover:border-primary/40 transition-all group">
+<span class="font-label-mono text-label-mono text-on-surface">Purge Cache</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant group-hover:text-primary">layers_clear</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Configuration Tabs (8 columns) -->
+<section class="col-span-12 lg:col-span-8 glass-card rounded-xl overflow-hidden">
+<div class="flex border-b border-outline-variant/10">
+<button class="flex-1 px-lg py-md font-label-mono text-label-mono text-primary bg-primary/5 border-b-2 border-primary">
+            Environment Variables
+          </button>
+<button class="flex-1 px-lg py-md font-label-mono text-label-mono text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/50 transition-all">
+            Secrets
+          </button>
+<button class="flex-1 px-lg py-md font-label-mono text-label-mono text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/50 transition-all">
+            Team Access
+          </button>
+</div>
+<div class="p-lg">
+<!-- Env Vars Interface -->
+<div class="flex flex-col gap-lg">
+<div class="flex justify-between items-center">
+<span class="font-body-sm text-body-sm text-on-surface-variant uppercase tracking-widest">Active Keys</span>
+<button class="flex items-center gap-xs px-md py-1.5 bg-primary-container text-on-primary-container rounded font-label-mono text-label-mono font-bold hover:brightness-110 transition-all active:scale-95">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                ADD NEW KEY
+              </button>
+</div>
+<div class="flex flex-col gap-sm">
+<!-- Key Row -->
+<div class="grid grid-cols-12 items-center px-md py-md bg-surface-container-low border border-outline-variant/10 rounded-lg group hover:border-primary/20 transition-all">
+<div class="col-span-4">
+<span class="font-label-mono text-label-mono text-primary-fixed-dim">DATABASE_URL</span>
+</div>
+<div class="col-span-6">
+<span class="font-label-mono text-label-mono text-on-surface-variant truncate block mr-md">postgresql://admin:********@aws-cluster-721...</span>
+</div>
+<div class="col-span-2 flex justify-end gap-md">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-colors">edit</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-error transition-colors">delete</span>
+</div>
+</div>
+<!-- Key Row -->
+<div class="grid grid-cols-12 items-center px-md py-md bg-surface-container-low border border-outline-variant/10 rounded-lg group hover:border-primary/20 transition-all">
+<div class="col-span-4">
+<span class="font-label-mono text-label-mono text-primary-fixed-dim">REDIS_HOST</span>
+</div>
+<div class="col-span-6">
+<span class="font-label-mono text-label-mono text-on-surface-variant truncate block mr-md">10.0.4.12:6379</span>
+</div>
+<div class="col-span-2 flex justify-end gap-md">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-colors">edit</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-error transition-colors">delete</span>
+</div>
+</div>
+<!-- Key Row -->
+<div class="grid grid-cols-12 items-center px-md py-md bg-surface-container-low border border-outline-variant/10 rounded-lg group hover:border-primary/20 transition-all">
+<div class="col-span-4">
+<span class="font-label-mono text-label-mono text-primary-fixed-dim">LOG_LEVEL</span>
+</div>
+<div class="col-span-6">
+<span class="font-label-mono text-label-mono text-on-surface-variant">debug</span>
+</div>
+<div class="col-span-2 flex justify-end gap-md">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-colors">edit</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-error transition-colors">delete</span>
+</div>
+</div>
+<!-- Key Row -->
+<div class="grid grid-cols-12 items-center px-md py-md bg-surface-container-low border border-outline-variant/10 rounded-lg group hover:border-primary/20 transition-all">
+<div class="col-span-4">
+<span class="font-label-mono text-label-mono text-primary-fixed-dim">NODE_ENV</span>
+</div>
+<div class="col-span-6">
+<span class="font-label-mono text-label-mono text-on-surface-variant">production</span>
+</div>
+<div class="col-span-2 flex justify-end gap-md">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-colors">edit</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-error transition-colors">delete</span>
+</div>
+</div>
+</div>
+<div class="p-md bg-surface-container-highest/20 rounded-lg border border-primary/10 flex items-start gap-md">
+<span class="material-symbols-outlined text-primary-fixed-dim">info</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Changes to environment variables require a full re-deployment of the affected services. This process typically takes 45-60 seconds.</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- BottomNavBar -->
+<div class="fixed bottom-0 left-0 right-0 z-50 flex justify-center pb-md">
+<div class="bg-surface-container-highest/40 backdrop-blur-2xl border border-outline-variant/30 rounded-full mx-auto mb-lg w-fit px-md py-sm flex items-center gap-md shadow-[0_0_40px_rgba(47,217,244,0.06)]">
+<div class="flex items-center gap-sm text-primary font-bold">
+<span class="material-symbols-outlined">search</span>
+<span class="font-label-mono text-label-mono">Omni-Bar</span>
+</div>
+<div class="h-4 w-px bg-outline-variant/30"></div>
+<span class="text-on-surface-variant font-label-mono-sm">CMD + K</span>
+</div>
+</div>
+<!-- Footer -->
+<footer class="fixed bottom-0 w-full z-30 flex justify-between items-center px-md py-1 h-8 ml-20 bg-surface-dim border-t border-outline-variant/5">
+<div class="flex items-center gap-lg">
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">© 2024 Supercode Engine</span>
+<div class="flex items-center gap-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+<span class="font-label-mono-sm text-label-mono-sm text-tertiary">CI/CD Healthy</span>
+</div>
+</div>
+<div class="flex items-center gap-md pr-24">
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant/80 hover:text-on-surface cursor-default">Main Branch</span>
+<span class="font-label-mono-sm text-label-mono-sm text-tertiary font-bold cursor-default">Production</span>
+</div>
+</footer>
+</body></html>
