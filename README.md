@@ -1,96 +1,84 @@
-<div align="center">
-  <h1>🚀 Supercode (LeetCode Tracker)</h1>
-  <p>A modern, interactive web application to systematically track your LeetCode progress and conquer coding interviews.</p>
-  
-  <!-- Badges -->
-  <p>
-    <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
-    <img src="https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E" alt="Vite" />
-    <a href="https://github.com/Mahizhan-S/Supercode/stargazers"><img src="https://img.shields.io/github/stars/Mahizhan-S/Supercode?style=for-the-badge&color=yellow" alt="Stars" /></a>
-    <img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" alt="License" />
-  </p>
-</div>
+# Supercode
 
-<br />
+A continuous progress tracker for LeetCode. This React-based application is designed to help developers monitor their problem-solving roadmap and visualize conceptual learning paths across data structures and algorithms.
 
-## ✨ Features
+<p>
+  <img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB" alt="React" />
+  <img src="https://img.shields.io/badge/Vite-B73BFE?style=flat-square&logo=vite&logoColor=FFD62E" alt="Vite" />
+  <a href="https://github.com/Mahizhan-S/Supercode/stargazers"><img src="https://img.shields.io/github/stars/Mahizhan-S/Supercode?style=flat-square&color=lightgrey" alt="Stars" /></a>
+  <img src="https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square" alt="License" />
+</p>
 
-- 🗺️ **Interactive Roadmap**: Visualize your learning path across different data structures and algorithms concepts.
-- 📊 **Problem Tracking**: Keep track of the problems you've solved, pending challenges, and those you want to review.
-- 🎨 **Modern UI**: Built with a sleek, responsive interface utilizing reusable, accessible UI components.
-- ⚡ **Lightning Fast**: Powered by Vite for instant server start and lightning-fast HMR.
+## Features
 
-## 📸 Sneak Peek
+- **Interactive Roadmap**: View and navigate through structured learning paths spanning multiple computer science concepts.
+- **Progress Tracking**: Manage state for solved problems, pending challenges, and questions flagged for review.
+- **Client-Side Architecture**: Lightweight local state management providing immediate response times without external database dependencies.
 
-Here's an overview of the beautiful UI of the Supercode tracker!
+## Interface Overview
 
 ![Dashboard View](./public/screenshot1.png)
 ![Roadmap View](./public/screenshot2.png)
 
-## 💻 Tech Stack
+## Tech Stack
 
-- **Framework**: [React](https://reactjs.org/) + [Vite](https://vitejs.dev/)
-- **Styling**: Modern CSS with utility-first modular UI components (Badge, Button, Card, Checkbox, Progress).
-- **Data Management**: Local component state tailored for seamless UX.
+- **Framework**: React, Vite
+- **Styling**: Component-scoped CSS
+- **Deployment**: Standard Node/NPM toolchain
 
-## 🚀 Getting Started
-
-Follow these minimal instructions to get a copy of the project up and running on your local machine.
+## Getting Started
 
 ### Prerequisites
 
-Ensure you have [Node.js](https://nodejs.org/) (v14 or higher) installed on your machine.
+- Node.js (v14.0.0 or later)
+- npm or yarn
 
 ### Installation
 
-1. **Clone the repository:**
+1. Clone the repository:
    ```bash
    git clone https://github.com/Mahizhan-S/Supercode.git
    cd Supercode
    ```
 
-2. **Install dependencies:**
+2. Install the project dependencies:
    ```bash
    npm install
    ```
 
-3. **Start the development server:**
+3. Boot the development server:
    ```bash
    npm run dev
    ```
 
-4. **Open your sandbox:**
-   Navigate to \`http://localhost:5173\` in your favorite browser.
+4. Access the application locally at `http://localhost:5173`.
 
-## 📁 Project Architecture
+## Project Structure
 
 ```text
 Supercode/
 ├── src/
-│   ├── components/       # Core React components (Roadmap, etc.)
-│   │   └── ui/           # Reusable UI elements (Badge, Button, Card...)
-│   ├── data/             # Seed data for problems and roadmap
-│   ├── App.jsx           # Main application entry
-│   └── styles.css        # Global CSS styles
+│   ├── components/       # Primary views and React components
+│   │   └── ui/           # Reusable generic interface elements
+│   ├── data/             # Persistent seed data and state constants
+│   ├── App.jsx           # Root component
+│   └── styles.css        # Base stylesheet
 ├── public/               # Static assets
-└── leetcode.sh           # Handy shell utility
+└── leetcode.sh           # Auxiliary shell utility
 ```
 
-## 🤝 Contributing
+## Contributing
 
-Contributions, issues, and feature requests are welcome! Feel free to check out the [issues page](https://github.com/Mahizhan-S/Supercode/issues).
+Contributions to Supercode are welcome. To contribute:
 
-1. Fork the Project
-2. Create your Feature Branch (\`git checkout -b feature/AmazingFeature\`)
-3. Commit your Changes (\`git commit -m 'Add some AmazingFeature'\`)
-4. Push to the Branch (\`git push origin feature/AmazingFeature\`)
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/YourFeature`)
+3. Commit your changes (`git commit -m 'Add SomeFeature'`)
+4. Push to the branch (`git push origin feature/YourFeature`)
 5. Open a Pull Request
 
-## 📜 License
+Please ensure your code adheres to the existing style and includes appropriate documentation.
 
-This project is open-source and available under the MIT License.
+## License
 
----
-<div align="center">
-  Made with ❤️ by <a href="https://github.com/Mahizhan-S">Mahizhan</a>
-</div>
+This project is distributed under the MIT License. See the `LICENSE` file for details.
